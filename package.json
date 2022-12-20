@@ -1,0 +1,19 @@
+{
+  "name": "shopify-dev-setup",
+  "version": "1.0.0",
+  "description": "Shopify dev setup for a new store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tosia921/shopify-dev-setup.git"
+  },
+  "author": "Tomasz Posiadala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tosia921/shopify-dev-setup/issues"
+  },
+  "homepage": "https://github.com/tosia921/shopify-dev-setup#readme"
+}
