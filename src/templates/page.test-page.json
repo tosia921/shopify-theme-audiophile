@@ -1,0 +1,13 @@
+{
+    "name": "Learning shopify",
+    "sections": {
+      "main": {
+        "type": "example-section",
+        "settings": {}
+      }
+    },
+    "order": [
+      "main"
+    ]
+}
+  
