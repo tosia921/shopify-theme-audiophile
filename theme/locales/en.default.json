@@ -243,6 +243,14 @@
     },
     "footer": {
       "payment": "Payment methods"
+    },
+    "cart": {
+      "cart_error": "TODO",
+      "cart_quantity_error_html": "TODO"
+    },
+    "slideshow": {
+      "pause_slideshow": "TODO",
+      "play_slideshow": "TODO"
     }
   },
   "localization": {

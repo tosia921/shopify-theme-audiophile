@@ -1,10 +1,12 @@
-.classs {
-  color: red;
+.skip-to-content-link:focus {
+  z-index: 9999;
+  position: inherit;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  clip: auto;
 }
-.red {
-  color: red;
-  border: 1px solid blue;
-}
-.green {
-  color: green;
+* {
+  box-sizing: border-box;
+  color: black;
 }
