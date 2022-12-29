@@ -11,17 +11,17 @@ const srcPaths = {
     assets: './src/assets/**/*.*'
 }
 const distPaths = {
-    distAll: './dist/assets',
-    scss: "./dist/assets",
-    js: "./dist/assets",
-    configFiles: './dist/config',
-    layoutFiles: './dist/layout',
-    localesFiles: './dist/locales',
-    sectionFiles: './dist/sections',
-    snippetsFiles: './dist/snippets',
-    templatesFiles: './dist/templates',
-    customersFiles: './dist/templates/customers',
-    assets: './dist/assets/'
+    distAll: './theme/assets',
+    scss: "./theme/assets",
+    js: "./theme/assets",
+    configFiles: './theme/config',
+    layoutFiles: './theme/layout',
+    localesFiles: './theme/locales',
+    sectionFiles: './theme/sections',
+    snippetsFiles: './theme/snippets',
+    templatesFiles: './theme/templates',
+    customersFiles: './theme/templates/customers',
+    assets: './theme/assets/'
 }
 
 module.exports = {
