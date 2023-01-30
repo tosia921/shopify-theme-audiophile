@@ -4,7 +4,8 @@
   "description": "Shopify dev setup for a new store",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp"
+    "dev": "gulp",
+    "theme": "cd theme && shopify theme dev --store https://hydrogen-test-tomek.myshopify.com/"
   },
   "repository": {
     "type": "git",

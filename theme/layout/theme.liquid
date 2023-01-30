@@ -19,13 +19,6 @@
         href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link
-        rel="preconnect"
-        href="https://fonts.shopifycdn.com"
-        crossorigin>
-    {%- endunless -%}
-
     <title>
       {{ page_title }}
       {%- if current_tags %}
@@ -40,8 +33,6 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {% render 'meta-tags' %}
-
     {{ content_for_header }}
 
   </head>
@@ -51,11 +42,7 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
     {% section 'header' %}
-    <main
-      id="MainContent"
-      class="content-for-layout focus-none"
-      role="main"
-      tabindex="-1">
+    <main id="#MainContent">
       {{ content_for_layout }}
     </main>
 
