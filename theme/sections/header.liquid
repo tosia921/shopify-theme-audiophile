@@ -1,6 +1,24 @@
-<header>
+<header class="header">
+  <header-component>
+    <div class="header__wrapper">
+      <div class="header__logo">
 
+        <div class="hamburger-button">
+          {% render 'hamburger-icon' %}
+        </div>
 
-
-
+        {{ shop.name }}
+      </div>
+      <ul class="header-menu">
+        {% for link in linklists.main-menu.links -%}
+          <li class="header-menu--item">{{ link.title | link_to: link.url }}</li>
+        {%- endfor %}
+      </ul>
+      <div>
+        {% render 'cart-icon' %}
+      </div>
+    </div>
+  </header-component>
 </header>
+
+{{ 'header.js' | asset_url | script_tag }}

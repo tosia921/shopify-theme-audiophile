@@ -1,0 +1,55 @@
+.button-primary {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 16px 30px;
+  background-color: var(--orange-dark);
+  color: var(--white);
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--orange-light);
+  }
+}
+.button-secondary {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 16px 30px;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  color: var(--black);
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+.button-tertiary {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 16px 30px;
+  background-color: var(--white);
+  color: var(--black);
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+  span {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    span {
+      color: var(--orange-dark);
+    }
+  }
+}

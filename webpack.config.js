@@ -5,9 +5,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    one: [
+    header: [
       'regenerator-runtime/runtime.js',
-      path.resolve(__dirname, 'src/js/one.js'),
+      path.resolve(__dirname, 'src/js/header.js'),
     ],
     two: [
       'regenerator-runtime/runtime.js',

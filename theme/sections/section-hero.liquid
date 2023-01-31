@@ -1,0 +1,37 @@
+<p>section hero</p>
+
+{% schema %}
+  {
+    "name": "page-hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "pretitle",
+        "label": " Pre Title",
+        "default": "NEW PRODUCT"
+      }, 
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Product name"
+      }, {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Collection"
+      }, {
+        "type": "range",
+        "id": "number_of_products_to_show",
+        "min": 4,
+        "max": 12,
+        "default": 4,
+        "label": "Number of Products to show"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Section"
+      }
+    ]
+  }
+{% endschema %}
