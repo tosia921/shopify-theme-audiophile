@@ -1,6 +1,7 @@
 .header {
   height: 90px;
   width: 100%;
+  overflow: hidden;
   background-color: black;
 
   &__wrapper {
@@ -42,6 +43,7 @@
     left: 0;
   }
   &-menu {
+    z-index: 1000;
     display: flex;
     list-style-type: none;
     @media (max-width: 768px) {

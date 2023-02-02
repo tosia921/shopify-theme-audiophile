@@ -2,7 +2,50 @@
   "sections": {
     "section-hero": {
       "type": "section-hero"
+    },
+    "section-nav": {
+      "type": "section-nav",
+      "blocks": {
+        "section-nav-item": {
+          "type": "section-nav-item",
+          "settings": {
+            "block_title": "HEADPHONES"
+          }
+        },
+        "section-nav-item-2": {
+          "type": "section-nav-item",
+          "settings": {
+            "block_title": "SPEAKERS"
+          }
+        },
+        "section-nav-item-3": {
+          "type": "section-nav-item",
+          "settings": {
+            "block_title": "EARPHONES"
+          }
+        }
+      },
+      "block_order": [
+        "section-nav-item",
+        "section-nav-item-2",
+        "section-nav-item-3"
+      ]
+    },
+    "section-grid": {
+      "type": "section-grid",
+      "blocks": {
+        "grid-item-large": {
+          "type": "grid-item-large"
+        },
+        "grid-item-medium": {
+          "type": "grid-item-medium"
+        },
+        "grid-two-col": {
+          "type": "grid-two-col"
+        }
+      },
+      "block_order": ["grid-item-large", "grid-item-medium", "grid-two-col"]
     }
   },
-  "order": ["section-hero"]
+  "order": ["section-hero", "section-nav", "section-grid"]
 }
