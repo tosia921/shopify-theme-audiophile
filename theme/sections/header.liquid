@@ -6,8 +6,9 @@
         <div class="hamburger-button">
           {% render 'hamburger-icon' %}
         </div>
-
-        {{ shop.name }}
+        <a href="/">
+          {{ shop.name }}
+        </a>
       </div>
       <ul class="header-menu">
         {% for link in linklists.main-menu.links -%}

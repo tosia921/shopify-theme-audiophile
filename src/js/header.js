@@ -4,8 +4,6 @@ class header extends HTMLElement {
 
     const hamburgerButton = this.querySelector('.hamburger-button');
 
-    console.log(hamburgerButton);
-
     hamburgerButton.addEventListener('click', this.toogleMenu);
   }
 

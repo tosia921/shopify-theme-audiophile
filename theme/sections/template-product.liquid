@@ -1,0 +1,54 @@
+<div class="template-product">
+  <div class="main-info">
+    <div class="image">
+      {{ product.featured_image | image_url: width: 1200 | image_tag}}
+       </div>
+       <div class="info">
+        <div>
+            <h2>{{ product.title }} <br> 
+            {% for collection in product.collections limit:1 %}
+                {{ collection.title }}
+            {% endfor %}
+            </h2>
+        </div>
+        <div class="info-right">
+          <add-to-cart-button>
+            <div class="price">{{product.price | money}}</div>
+              <div class="product-form" data-id="{{product.first_available_variant.id}}">         
+                <div class="quanity-wrapper">
+                    <div class="minus"><span>-</span></div>
+                    <input class="quanity" value="1"/>
+                    <div class="plus"><span>+</span></div>
+                </div>       
+                <button class="button-primary js-add-to-cart" type="submit">ADD TO CART</button>
+              </div>
+              {{product.first_available_variant.id}}
+          </add-to-cart-button>
+          
+        </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Template Product",
+    "tag": "section"
+  }
+{% endschema %}
+
+
+
+{% comment %} {% form 'product', product %}
+                    
+<select {% if product.variants.size == 1 %}hidden{% endif %}  name="id">
+        {% for variant in product.variants %}
+            <option value={{variant.id}}>
+                {{variant.title}}
+            </option>
+        {% endfor %}
+</select>
+
+<button class="button-primary" type="submit">ADD TO CART</button>
+{%endform%} {% endcomment %}

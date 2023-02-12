@@ -18,12 +18,16 @@
   }
 
   &__logo {
-    font-size: 25px;
-    font-weight: 900;
-    text-transform: lowercase;
-    color: var(--white);
     display: flex;
     align-items: center;
+
+    a {
+      font-size: 25px;
+      font-weight: 900;
+      text-transform: lowercase;
+      color: var(--white);
+      text-decoration: none;
+    }
 
     div {
       display: none;

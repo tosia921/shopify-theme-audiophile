@@ -9,9 +9,9 @@ module.exports = {
       'regenerator-runtime/runtime.js',
       path.resolve(__dirname, 'src/js/header.js'),
     ],
-    two: [
+    addToCartButton: [
       'regenerator-runtime/runtime.js',
-      path.resolve(__dirname, 'src/js/two.js'),
+      path.resolve(__dirname, 'src/js/addToCartButton.js'),
     ],
   },
   output: {

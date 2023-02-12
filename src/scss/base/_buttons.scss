@@ -7,12 +7,19 @@
   color: var(--white);
   display: inline-block;
   text-transform: uppercase;
+  border: none;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background-color: var(--orange-light);
   }
 }
+
+.align-left {
+  align-self: flex-start;
+}
+
 .button-secondary {
   font-size: 13px;
   font-weight: bold;
@@ -24,7 +31,7 @@
   display: inline-block;
   text-transform: uppercase;
   cursor: pointer;
-  
+
   &.black {
     background-color: var(--black);
     color: var(--white);
