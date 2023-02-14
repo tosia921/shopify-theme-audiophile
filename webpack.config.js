@@ -13,6 +13,14 @@ module.exports = {
       'regenerator-runtime/runtime.js',
       path.resolve(__dirname, 'src/js/addToCartButton.js'),
     ],
+    cart: [
+      'regenerator-runtime/runtime.js',
+      path.resolve(__dirname, 'src/js/cart.js'),
+    ],
+    formatMoney: [
+      'regenerator-runtime/runtime.js',
+      path.resolve(__dirname, 'src/js/formatMoney.js'),
+    ],
   },
   output: {
     path: outputDir,

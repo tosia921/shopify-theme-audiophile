@@ -15,8 +15,16 @@
           <li class="header-menu--item">{{ link.title | link_to: link.url }}</li>
         {%- endfor %}
       </ul>
-      <div>
-        {% render 'cart-icon' %}
+      <div class="cart-icon-parent">
+        <a href="{{routes.cart_url}}">
+          {% render 'cart-icon' %}
+
+          {% if cart.item_count > 0 %}
+            <div class="cart-icon-count">
+              <span>{{ cart.item_count }}</span>
+            </div>
+          {% endif %}
+        </a>
       </div>
     </div>
   </header-component>

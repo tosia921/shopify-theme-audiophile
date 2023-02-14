@@ -1,3 +1,5 @@
+{% comment %} {{ 'addToCartButton.js' | asset_url | script_tag }} {% endcomment %}
+
 <div class="template-product">
   <div class="main-info">
     <div class="image">
@@ -22,7 +24,7 @@
                 </div>       
                 <button class="button-primary js-add-to-cart" type="submit">ADD TO CART</button>
               </div>
-              {{product.first_available_variant.id}}
+      
           </add-to-cart-button>
           
         </div>

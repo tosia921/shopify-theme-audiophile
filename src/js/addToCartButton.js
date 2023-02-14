@@ -1,7 +1,7 @@
 class addToCartButton extends HTMLElement {
   constructor() {
     super();
-
+    console.log('running');
     const minus = this.querySelector('.minus');
     const plus = this.querySelector('.plus');
 
