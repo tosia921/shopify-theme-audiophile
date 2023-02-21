@@ -1,3 +1,7 @@
+import axios from 'axios';
+import iziToast from 'iziToast';
+
+
 class addToCartButton extends HTMLElement {
   constructor() {
     super();
@@ -16,27 +20,45 @@ class addToCartButton extends HTMLElement {
   }
 
   addToCart() {
+
+    const spinnerIcon = this.querySelector('.lds-ring')
+    const addToCartButton = document.querySelector('.js-add-to-cart');
+    const buttonText = this.querySelector('.js-add-to-cart span')
+    console.log(addToCartButton)
+    addToCartButton.style.pointerEvents = "none";
+    spinnerIcon.style.display = "inline-block"
+    buttonText.style.display = "none"
+
     const form = document.querySelector('.product-form');
     const itemID = form.getAttribute('data-id');
 
     const quanity = document.querySelector('.quanity').value;
 
-    let formData = {
-      items: [
-        {
-          id: +itemID,
-          quantity: +quanity,
-        },
-      ],
-    };
+    // Adding item to the cart
+    axios
+      .post(window.Shopify.routes.root + 'cart/add.js', {
+        id: +itemID,
+        quantity: +quanity,
+      })
+      .then((res) => {
+        // fetching cart object to update the cart icon count
+        axios.get(window.Shopify.routes.root + 'cart.js').then((res) => {
 
-    fetch(window.Shopify.routes.root + 'cart/add.js', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+          //updating cart icon
+          const cartIconCount = document.querySelector('.cart-icon-count span');
+          cartIconCount.innerHTML = res.data.item_count;
+
+          iziToast.show({
+            title: 'Item Added to the cart!',
+            color: '#abf7b1'
+        });
+
+          // disabling spinner
+          spinnerIcon.style.display = "none"
+          buttonText.style.display = "inline-block"
+          addToCartButton.style.pointerEvents = "all";
+        });
+      });
   }
 
   increaseQuanity() {

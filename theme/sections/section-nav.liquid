@@ -5,7 +5,8 @@
       {% when 'section-nav-item' %}
       <div class="section-nav__item">
         <h6>{{ block.settings.block_title }}</h6>
-        {% render 'button-arrow', text: 'SHOP' %}
+        {% assign buttonUrl = block.settings.block_url %}
+        {% render 'button-arrow', text: 'SHOP', url: buttonUrl %}
       </div>
     {% endcase %}
   {% endfor %}

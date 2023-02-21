@@ -1,5 +1,6 @@
 import axios from 'axios';
 import formatMoney from './formatMoney';
+import iziToast from 'iziToast'
 
 class Cart extends HTMLElement {
   constructor() {
@@ -23,7 +24,18 @@ class Cart extends HTMLElement {
     });
   }
 
+  updateCartIconQuanity(quanity) {}
+
   removeItem() {
+
+    const spinnerIcon = this.querySelector('.lds-ring')
+    const addToCartButton = document.querySelector('.remove');
+    const buttonText = this.querySelector('.remove span')
+
+    addToCartButton.style.pointerEvents = "none";
+    spinnerIcon.style.display = "inline-block"
+    buttonText.style.display = "none"
+
     const item = this.closest('.item');
     const key = item.getAttribute('data-itemid');
     axios
@@ -33,13 +45,24 @@ class Cart extends HTMLElement {
       })
       .then((res) => {
         if (res.data.items.length === 0) {
+          console.log(res.data);
           document.querySelector('.cart-content').remove();
 
           const html = document.createElement('div');
           html.innerHTML = `<div class="cart__empty"><h3>Your Cart is empty</h3></div>`;
 
           document.querySelector('.cart').appendChild(html);
+
+          const cartIconCount = document.querySelector('.cart-icon-count span');
+          cartIconCount.innerHTML = res.data.item_count;
+
+          iziToast.show({
+            title: `Item removed from the cart`,
+            color: '#ff6863'
+        });
+
         } else {
+          console.log(res.data);
           const format = document
             .querySelector('[data-money-format]')
             .getAttribute(['data-money-format']);
@@ -48,6 +71,14 @@ class Cart extends HTMLElement {
           document.querySelector('.total_price').textContent = totalPrice;
 
           item.remove();
+
+          const cartIconCount = document.querySelector('.cart-icon-count span');
+          cartIconCount.innerHTML = res.data.item_count;
+
+          iziToast.show({
+            title: `Item removed from the cart`,
+            color: '#ff6863'
+        });
         }
       });
   }
@@ -62,6 +93,7 @@ class Cart extends HTMLElement {
     console.log(key);
 
     function changeItemQuanity(key, quantity) {
+
       axios
         .post('/cart/change.js', {
           id: key,
@@ -79,6 +111,9 @@ class Cart extends HTMLElement {
           document.querySelector(
             `[data-itemid="${key}"] .item_price`
           ).textContent = itemPrice;
+
+          const cartIconCount = document.querySelector('.cart-icon-count span');
+          cartIconCount.innerHTML = res.data.item_count;
         });
     }
 

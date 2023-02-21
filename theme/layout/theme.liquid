@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     {{ 'main.css' | asset_url | stylesheet_tag }}
+    {{ 'iziToast.min.css' | asset_url | stylesheet_tag }}
 
     {%- if settings.favicon != blank -%}
       <link
@@ -85,5 +86,6 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     {{ 'addToCartButton.js' | asset_url | script_tag }}
+    <script src="iziToast.min.js" type="text/javascript"></script>
   </body>
 </html>

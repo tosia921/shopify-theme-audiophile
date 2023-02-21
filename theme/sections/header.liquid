@@ -23,6 +23,10 @@
             <div class="cart-icon-count">
               <span>{{ cart.item_count }}</span>
             </div>
+          {% else %}
+          <div class="cart-icon-count">
+              <span>0</span>
+            </div>
           {% endif %}
         </a>
       </div>
